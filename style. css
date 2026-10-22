@@ -1,0 +1,25 @@
+body {
+    background-color: #f4f8fb;
+    font-family: Arial, sans-serif;
+}
+
+#main-header {
+    background-color: #0A2342; 
+    color: #ffffff;
+    margin: 20px;
+    padding: 25px;
+    border: 5px solid #FF5722; 
+}
+
+.content-box {
+    background-color: #ffffff;
+    margin: 15px auto;
+    padding: 20px;
+    border: 3px solid #0A2342;
+}
+
+img {
+    margin: 10px;
+    padding: 5px;
+    border: 2px dashed #FF5722;
+}
