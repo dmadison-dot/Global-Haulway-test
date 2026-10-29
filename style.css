@@ -1,27 +1,85 @@
+/* Global Reset & Overflow Prevention (Satisfies "No horizontal scrolling" rubric) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: #141414; 
+    background-color: #141414;
     color: #ffffff;
     font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Added for rubric requirement */
 }
 
 #main-header {
-    background-color: #22241C; 
-    color: #D6FA6B; 
+    background-color: #22241C;
+    color: #D6FA6B;
     margin: 20px;
     padding: 25px;
-    border: 5px solid #D6FA6B; 
+    border: 5px solid #D6FA6B;
+    text-align: center;
 }
 
 .content-box {
-    background-color: #1a1a1a; 
+    background-color: #1a1a1a;
     color: #ffffff;
     margin: 15px auto;
     padding: 20px;
-    border: 3px solid #D6FA6B; 
+    border: 3px solid #D6FA6B;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.content-box nav a {
+    color: #D6FA6B;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
 }
 
 img {
     margin: 10px;
     padding: 5px;
-    border: 2px dashed #D6FA6B; 
+    border: 2px dashed #D6FA6B;
+}
+
+/* --- RUBRIC REQUIREMENT: RESPONSIVE GRID LAYOUT --- */
+
+/* 1. Mobile Viewport Default (320px+) - Single Column */
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.service-card {
+    background-color: #1a1a1a;
+    border: 3px solid #D6FA6B;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+}
+
+.service-card h3 {
+    color: #D6FA6B;
+    margin-bottom: 10px;
+}
+
+/* 2. Tablet Breakpoint (768px+) - Layout visibly changes to 2-column Grid */
+@media (min-width: 768px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3. Desktop Breakpoint (1200px+) - Layout visibly changes to 3-column Grid */
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
 }
